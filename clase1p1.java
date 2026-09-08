@@ -20,7 +20,6 @@ public class clase1p1 {
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] == numeroBuscar) {
                 encontrado= true;
-                break;
             }
         }
         return encontrado;
@@ -33,6 +32,9 @@ public static boolean verificarNumeroRepetido(int[] numeros){
                repetido= true;
                break;
            }
+       }
+       if(repetido){
+           break;
        }
     }
     return repetido;
