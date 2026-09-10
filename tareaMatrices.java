@@ -108,7 +108,7 @@ public static int [][] crearEspiral(int tamano) {
         System.out.println("6. Espiral de numeros: ");
         for (int i = 0; i < espiral.length; i++) {
             for (int j = 0; j < espiral[i].length; j++) {
-                System.out.print(espiral[i][j] + " ");
+                System.out.print(espiral[i][j] + "\t");
             }
             System.out.println();
         }
