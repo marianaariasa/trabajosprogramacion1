@@ -10,9 +10,9 @@ public class tareaMatrices {
     int sumaMatriz = sumarMatriz(matriz);
     int sumaDiagonal = sumarDiagonal(matriz);
     int[][] matrizX = dibujarMatrizX(tamano);
-    int[][] cuadroSuperior = dibujarCuadroSuperior(tamano);
+    int[][] cuadroExterior = dibujarCuadroExterior(tamano);
     int[][] espiral = crearEspiral(tamano);
-    generarMensaje(matriz, sumaMatriz, sumaDiagonal, matrizX, cuadroSuperior, espiral);
+    generarMensaje(matriz, sumaMatriz, sumaDiagonal, matrizX, cuadroExterior, espiral);
 }
 public static int sumarMatriz (int[][] matriz){
     int suma= 0;
@@ -41,12 +41,11 @@ public static int[][] dibujarMatrizX(int tamano) {
     }
     return matriz;
 }
-public static int[][] dibujarCuadroSuperior(int tamano){
+public static int[][] dibujarCuadroExterior(int tamano){
     int[][] matriz = new int[tamano][tamano];
-    int limite= tamano / 2;
-    for (int i = 0; i <= limite; i++) {
+    for (int i = 0; i < matriz.length; i++) {
         for (int j = 0; j < matriz[i].length; j++) {
-            if (i == 0 || i == limite || j == 0 || j == matriz[i].length - 1) {
+            if (i == 0 || i == matriz.length - 1  || j == 0 || j == matriz[i].length - 1) {
                 matriz[i][j] = 1;
             }
         }
@@ -81,7 +80,7 @@ public static int [][] crearEspiral(int tamano) {
     }
     return matriz;
 }
-    public static void generarMensaje(int [][] matriz, int sumaMatriz, int sumaDiagonal, int[][] matrizX, int [][] cuadroSuperior,int [][] espiral){
+    public static void generarMensaje(int [][] matriz, int sumaMatriz, int sumaDiagonal, int[][] matrizX, int [][] cuadroExterior,int [][] espiral){
         System.out.println("1. La matriz original es: ");
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -98,10 +97,10 @@ public static int [][] crearEspiral(int tamano) {
             }
             System.out.println();
         }
-        System.out.println("5. Cuadro superior: ");
-        for (int i = 0; i < cuadroSuperior.length; i++) {
-            for (int j = 0; j < cuadroSuperior[i].length; j++) {
-                System.out.print(cuadroSuperior[i][j] + " ");
+        System.out.println("5. Cuadro exterior: ");
+        for (int i = 0; i < cuadroExterior.length; i++) {
+            for (int j = 0; j < cuadroExterior[i].length; j++) {
+                System.out.print(cuadroExterior[i][j] + " ");
             }
             System.out.println();
         }
