@@ -183,7 +183,16 @@ public class Tienda {
         return productosBajoInventario;
     }
 
-  
+    //Punto 1 seguimiento
+    public Map<String, Producto> obtenerProductosConCantidadesMayoresA10() {
+        Map<String, Producto> productosD = new HashMap<>();
+        for (Producto aux : listaProductos.values()) {
+            if (aux.getCantidadDisponible() >= 10) {
+                productosD.put(aux.getCodigo(), aux);
+            }
+        }
+        return productosD;
+    }
 
 
 
