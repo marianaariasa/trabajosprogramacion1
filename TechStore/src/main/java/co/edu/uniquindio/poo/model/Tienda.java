@@ -203,8 +203,15 @@ public class Tienda {
         }
         return codigos;
     }
-
-
+    // punto 3 seguimiento
+    public List<Cliente> obtenerListaClientesFecha() {
+        List<Cliente> listaClientesFecha = new ArrayList<>();
+        for (Factura aux:listaFacturas) {
+            if (aux.fecha().equals(LocalDate.of(2026, 10, 7)));
+            listaClientesFecha.add(aux.cliente());
+        }
+        return listaClientesFecha;
+    }
 
 
 
