@@ -76,7 +76,7 @@ public class Tienda {
         return "No se encontró un cliente con ese documento";
     }
 
-        public String registrarFactura(Factura factura) {
+    public String registrarFactura(Factura factura) {
         Optional<Factura> facturaEncontrada = buscarFactura(factura.codigo());
         if (facturaEncontrada.isEmpty()) {
             listaFacturas.add(factura);
@@ -102,16 +102,18 @@ public class Tienda {
             return "No existe una factura con ese codigo";
         }
     }
-        public String eliminarFactura (String codigo){
-            Optional<Factura> resultado = buscarFactura(codigo);
-            if (resultado.isPresent()) {
-                Factura facturaEncontrada = resultado.get();
-                listaFacturas.remove(facturaEncontrada);
-                return "La factura se eliminado exitosamente";
-            } else {
-                return "No existe una factura con ese codigo";
-            }
+
+    public String eliminarFactura(String codigo) {
+        Optional<Factura> resultado = buscarFactura(codigo);
+        if (resultado.isPresent()) {
+            Factura facturaEncontrada = resultado.get();
+            listaFacturas.remove(facturaEncontrada);
+            return "La factura se eliminado exitosamente";
+        } else {
+            return "No existe una factura con ese codigo";
         }
+    }
+
     public String registrarProducto(Producto producto) {
         Optional<Producto> productoEncontrado = buscarProducto(producto.getCodigo());
         if (productoEncontrado.isEmpty()) {
@@ -136,7 +138,8 @@ public class Tienda {
             return "No existe un producto con ese codigo";
         }
     }
-    public String eliminarProducto(String codigo){
+
+    public String eliminarProducto(String codigo) {
         Optional<Producto> resultado = buscarProducto(codigo);
         if (resultado.isPresent()) {
             listaProductos.remove(resultado);
@@ -145,15 +148,17 @@ public class Tienda {
             return "No existe un producto con ese codigo";
         }
     }
-        public double obtenerTotalVendido(LocalDate fecha){
-        double totalVendido= 0;
-        for(Factura factura:listaFacturas){
-            if (factura.fecha().equals(fecha)){
-                totalVendido+= factura.calcularTotal();
+
+    public double obtenerTotalVendido(LocalDate fecha) {
+        double totalVendido = 0;
+        for (Factura factura : listaFacturas) {
+            if (factura.fecha().equals(fecha)) {
+                totalVendido += factura.calcularTotal();
             }
         }
         return totalVendido;
-        }
+    }
+
     public List<Factura> consultarFacturasCliente(Cliente cliente) {
         List<Factura> facturasCliente = new ArrayList<>();
         for (Factura factura : listaFacturas) {
@@ -164,6 +169,7 @@ public class Tienda {
         }
         return facturasCliente;
     }
+
     public Map<String, Producto> obtenerProductosBajoInventario() {
         Map<String, Producto> productosBajoInventario = new HashMap<>();
         for (Producto producto : listaProductos.values()) {
@@ -177,14 +183,41 @@ public class Tienda {
         return productosBajoInventario;
     }
 
-    //Punto 1 seguimiento
-    public Map<String, Producto> obtenerProductosConCantidadesMayoresA10() {
-        Map<String, Producto> productosD = new HashMap<>();
-        for (Producto aux : listaProductos.values()) {
-            if (aux.getCantidadDisponible() >= 10) {
-                productosD.put(aux.getCodigo(), aux);
-            }
-        }
-        return productosD;
-    }
-    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
