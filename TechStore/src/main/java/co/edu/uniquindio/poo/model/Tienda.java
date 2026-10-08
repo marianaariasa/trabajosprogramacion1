@@ -193,7 +193,16 @@ public class Tienda {
         }
         return productosD;
     }
-
+    //punto 2 seguimiento
+    public List<String> obtenerCodigosProductosEntre10Y50() {
+        List<String> codigos = new ArrayList<>();
+        for (Producto aux:listaProductos.values()) {
+            if (aux.getCantidadDisponible() >= 10 && aux.getCantidadDisponible() < 50) {
+                codigos.add(aux.getCodigo());
+            }
+        }
+        return codigos;
+    }
 
 
 
