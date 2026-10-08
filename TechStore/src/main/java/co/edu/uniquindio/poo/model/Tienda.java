@@ -212,7 +212,15 @@ public class Tienda {
         }
         return listaClientesFecha;
     }
-
+    //punto 4 seguimiento
+    public List<Factura> obtenerFacturaClienteR() {
+        List<Factura> listaFacturasR = new ArrayList<>();
+        for (Factura aux: listaFacturas) {
+            if (aux.tieneClienteConR());
+            listaFacturasR.add(aux);
+        }
+        return listaFacturasR;
+    }
 
 
 
