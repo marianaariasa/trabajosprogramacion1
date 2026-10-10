@@ -254,6 +254,16 @@ public class Tienda {
         return listaFacturasIphoneJuan;
     }
     
+    //punto 7 seguimiento
+    public List<Producto> obtenerProductosDeUnaCategoria(Categoria categoria) {
+        List<Producto> productosCategoria = new ArrayList<>();
+        for (Producto aux : listaProductos.values()) {
+            if (aux.getCategoria().equals(categoria)) {
+                productosCategoria.add(aux);
+            }
+        }
+        return productosCategoria;
+    }
 
 
 
