@@ -237,6 +237,23 @@ public class Tienda {
 
 
 
+    // punto 6 seguimiento
+    public List<Factura> obtenerFacturasJuanYIphone16ProMax() {
+        List<Factura> listaFacturasIphoneJuan = new ArrayList<>();
+        for (Factura aux : listaFacturas) {
+            String nombre = aux.cliente().getNombreCompleto().trim().toLowerCase();
+            if (nombre.equals("juan") || nombre.startsWith("juan ")){
+                for (DetalleFactura detalle : aux.listaDetallesFactura()) {
+                    if (detalle.getProducto().getNombre().equalsIgnoreCase("Iphone 16 Pro Max")) {
+                        listaFacturasIphoneJuan.add(aux);
+                        break;
+                    }
+                }
+            }
+        }
+        return listaFacturasIphoneJuan;
+    }
+    
 
 
 
