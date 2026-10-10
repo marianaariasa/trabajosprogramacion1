@@ -304,6 +304,16 @@ public class Tienda {
         }
         return resultado;
     }
+    //punto 11 seguimiento
+    public List<Cliente> obtenerClientesDeUnaCiudad(String ciudadResidencia){
+        List<Cliente> clientesCiudad= new ArrayList<>();
+        for (Cliente aux : listaClientes){
+            if(aux.getCiudadResidencia().equalsIgnoreCase(ciudadResidencia)){
+                clientesCiudad.add(aux);
+            }
+        }
+        return clientesCiudad;
+    }
 
 
 
