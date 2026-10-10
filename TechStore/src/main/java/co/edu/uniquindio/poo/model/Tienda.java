@@ -274,6 +274,20 @@ public class Tienda {
         }
         return productosRango;
     }
+    // punto 9 seguimiento
+    public List<Producto> productosOrdenadosDeMenorAMayorPrecio(){
+        List<Producto> productosOrdenados= new ArrayList<>(listaProductos.values());
+        for(int i= 0; i< productosOrdenados.size()-1; i++){
+            for(int j= i+1; j<productosOrdenados.size(); j++){
+                if (productosOrdenados.get(i).getValor() > productosOrdenados.get(j).getValor()) {
+                    Producto aux = productosOrdenados.get(i);
+                    productosOrdenados.set(i, productosOrdenados.get(j));
+                    productosOrdenados.set(j, aux);
+                }
+            }
+        }
+        return productosOrdenados;
+    }
 
 
 
