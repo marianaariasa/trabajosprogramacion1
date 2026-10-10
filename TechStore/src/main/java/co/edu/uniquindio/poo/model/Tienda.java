@@ -264,6 +264,16 @@ public class Tienda {
         }
         return productosCategoria;
     }
+    //punto 8 seguimiento
+    public List<Producto> productosDentroDeUnRangoDePrecios(double precioMinimo, double precioMaximo){
+        List<Producto> productosRango= new ArrayList<>();
+        for(Producto aux: listaProductos.values()){
+            if(aux.getValor() >= precioMinimo && aux.getValor() <= precioMaximo){
+                productosRango.add(aux);
+            }
+        }
+        return productosRango;
+    }
 
 
 
