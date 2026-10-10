@@ -288,6 +288,22 @@ public class Tienda {
         }
         return productosOrdenados;
     }
+    // punto 10 seguimiento
+    public Optional<Producto> productoPrecioMayor(){
+        Optional<Producto> resultado = Optional.empty();
+        if (!listaProductos.isEmpty()) {
+            List<Producto> productos = new ArrayList<>(listaProductos.values());
+            Producto productoMayor = productos.get(0);
+            for (int i = 1; i < productos.size(); i++) {
+                Producto aux = productos.get(i);
+                if (aux.getValor() > productoMayor.getValor()) {
+                    productoMayor = aux;
+                }
+            }
+            resultado = Optional.of(productoMayor);
+        }
+        return resultado;
+    }
 
 
 
