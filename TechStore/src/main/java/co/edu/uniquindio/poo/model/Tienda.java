@@ -221,6 +221,19 @@ public class Tienda {
         }
         return listaFacturasR;
     }
+    // punto 5 seguimiento
+    public List<Factura> obtenerFacturasIphone16ProMax() {
+        List<Factura> listaFacturasIphone = new ArrayList<>();
+        for (Factura aux : listaFacturas) {
+            for (DetalleFactura detalle : aux.listaDetallesFactura()) {
+                if (detalle.getProducto().getNombre().equalsIgnoreCase("Iphone 16 Pro Max")) {
+                    listaFacturasIphone.add(aux);
+                    break;
+                }
+            }
+        }
+        return listaFacturasIphone;
+    }
 
 
 
