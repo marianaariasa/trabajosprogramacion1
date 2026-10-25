@@ -9,10 +9,7 @@ public class EmpleadoVentas extends Empleado{
                           float descuentoPension, float totalVentas, float porcentajeComision) {
         super(nombre, documento, edad, salarioBase, categoria,
                 descuentoSalud, descuentoPension);
-        if (porcentajeComision < 0 || porcentajeComision > 100) {
-            throw new IllegalArgumentException("El porcentaje de comision debe estar" +
-                    " entre 0 y 100");
-        }
+        validarPorcentaje(porcentajeComision, "porcentaje de comision");
         this.totalVentas = totalVentas;
         this.porcentajeComision = porcentajeComision;
     }

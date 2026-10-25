@@ -15,12 +15,8 @@ public abstract class Empleado {
         if (salarioBase < 0) {
             throw new IllegalArgumentException("El salario base no puede ser negativo");
         }
-        if (descuentoSalud < 0 || descuentoSalud > 100) {
-            throw new IllegalArgumentException("El descuento de salud debe estar entre 0 y 100");
-        }
-        if (descuentoPension < 0 || descuentoPension > 100) {
-            throw new IllegalArgumentException("El descuento de pension debe estar entre 0 y 100");
-        }
+        validarPorcentaje(descuentoSalud, "descuento de salud");
+        validarPorcentaje(descuentoPension, "descuento de pension");
         this.nombre = nombre;
         this.documento = documento;
         this.edad = edad;

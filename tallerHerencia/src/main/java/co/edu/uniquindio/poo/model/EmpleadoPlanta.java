@@ -30,7 +30,7 @@ public class EmpleadoPlanta extends Empleado {
 
     @Override
     public String getTipoEmpleado() {
-        return " Empleado planta";
+        return "Empleado planta";
     }
 
     public String getCargo() {

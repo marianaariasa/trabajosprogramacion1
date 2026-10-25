@@ -4,13 +4,13 @@ import co.edu.uniquindio.poo.model.*;
 import java.util.Optional;
 import java.util.Scanner;
 public class Main {
-    static Scanner lectorTeclado = new Scanner(System.in);
+    static Scanner consulta = new Scanner(System.in);
 
     public static void main(String[] args) {
         Empresa empresa = new Empresa("Postobon");
         int opcion = 0;
         while (opcion != 9) {
-            System.out.println(" SISTEMA DE NOMINA ");
+            System.out.println("SISTEMA DE NOMINA");
             System.out.println("1. Agregar empleado de planta");
             System.out.println("2. Agregar empleado de ventas");
             System.out.println("3. Agregar empleado temporal");
@@ -36,7 +36,7 @@ public class Main {
                 } else if (opcion == 6) {
                     mostrarMayorSalario(empresa);
                 } else if (opcion == 7) {
-                    System.out.printf("Nomina total: %.2f%n", empresa.calcularNominaTotal());
+                    System.out.println("Nomina total: " + empresa.calcularNominaTotal());
                 } else if (opcion == 8) {
                     empresa.mostrarResumenesPago();
                 } else if (opcion == 9) {
@@ -49,7 +49,7 @@ public class Main {
                 System.out.println("El empleado no fue registrado.");
             }
         }
-        lectorTeclado.close();
+        consulta.close();
     }
     static void agregarEmpleadoPlanta(Empresa empresa) {
         System.out.println(" Nuevo empleado de planta ");
@@ -132,13 +132,13 @@ public class Main {
 
     static String leerTexto(String mensaje) {
         System.out.print(mensaje);
-        return lectorTeclado.nextLine().trim();
+        return consulta.nextLine().trim();
     }
 
     static int leerEntero(String mensaje) {
         while (true) {
             System.out.print(mensaje);
-            String textoIngresado = lectorTeclado.nextLine().trim();
+            String textoIngresado = consulta.nextLine().trim();
             try {
                 return Integer.parseInt(textoIngresado);
             } catch (NumberFormatException errorFormato) {
@@ -150,7 +150,7 @@ public class Main {
     static float leerDecimal(String mensaje) {
         while (true) {
             System.out.print(mensaje);
-            String textoIngresado = lectorTeclado.nextLine().trim().replace(",", ".");
+            String textoIngresado = consulta.nextLine().trim();
             try {
                 return Float.parseFloat(textoIngresado);
             } catch (NumberFormatException errorFormato) {

@@ -6,10 +6,12 @@ import java.util.Optional;
 public class Empresa {
     private String nombre;
     private ArrayList<Empleado> listaEmpleados;
+    private ArrayList<ResumenPago> listaResumenPago;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
         this.listaEmpleados = new ArrayList<>();
+        this.listaResumenPago = new ArrayList<>();
     }
 
     public void agregarEmpleado(Empleado empleado) {
@@ -60,11 +62,11 @@ public class Empresa {
     }
 
     public ArrayList<ResumenPago> generarResumenesPago() {
-        ArrayList<ResumenPago> resumenes = new ArrayList<>();
+        listaResumenPago.clear();
         for (Empleado aux : listaEmpleados) {
-            resumenes.add(aux.generarResumenPago());
+            listaResumenPago.add(aux.generarResumenPago());
         }
-        return resumenes;
+        return listaResumenPago;
     }
 
     public void mostrarResumenesPago() {
